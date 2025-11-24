@@ -166,11 +166,12 @@
 
     .hero h1 {
         font-size: 4.5rem;
-        color: var(--light);
+        color: #FFD700;
         margin-bottom: 1rem;
         font-weight: 700;
         letter-spacing: 3px;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
     }
 
     .hero-subtitle {
@@ -217,7 +218,10 @@
     /* About Section */
     .about {
         padding: 8rem 5%;
-        background: var(--light);
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+        background-size: cover;
+        background-position: center bottom;
+        background-attachment: fixed;
     }
 
     .container {
@@ -229,9 +233,10 @@
         font-size: 3rem;
         text-align: center;
         margin-bottom: 1rem;
-        color: var(--primary);
+        color: var(--light);
         font-weight: 700;
         letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
     .section-subtitle {
@@ -253,11 +258,12 @@
     }
 
     .value-card {
-        background: white;
+        background: rgba(255, 255, 255, 0.95);
         padding: 3rem 2rem;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         border-top: 3px solid var(--secondary);
+        backdrop-filter: blur(5px);
     }
 
     .value-card:hover {
@@ -283,7 +289,10 @@
     /* Services Section */
     .services {
         padding: 8rem 5%;
-        background: var(--primary);
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+        background-size: cover;
+        background-position: center bottom;
+        background-attachment: fixed;
         color: var(--light);
     }
 
@@ -564,7 +573,7 @@
 </section>
 
 <!-- Book Now Section -->
-<section style="padding: 4rem 5%; background: var(--primary); text-align: center;">
+<section style="padding: 4rem 5%; background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80'); background-size: cover; background-position: center bottom; background-attachment: fixed; text-align: center;">
     <div class="container">
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <a href="https://squareup.com/appointments/book/7qu811g8rxw3an/LJX5D8DY7VWYR/services" target="_blank" class="cta-button" style="background: #FFD700; color: #000; border: 2px solid #FFF; box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6); animation: pulse 2s infinite;">BOOK NOW</a>
