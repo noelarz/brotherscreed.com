@@ -301,53 +301,37 @@
             background: var(--light);
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
-
-        .testimonial-card {
+        .reviews-widget {
+            max-width: 1000px;
+            margin: 0 auto;
             background: var(--white);
-            padding: 3rem 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--secondary);
+            padding: 3rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        #reviewsonmywebsite-widget {
+            font-family: 'Inter', sans-serif !important;
         }
 
-        .stars {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
+        /* Custom styling for reviews widget */
+        .reviews-widget .review-card {
+            border-left: 4px solid var(--secondary) !important;
+            margin-bottom: 2rem !important;
         }
 
-        .testimonial-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-style: italic;
+        .reviews-widget .review-rating {
+            color: var(--secondary) !important;
         }
 
-        .client-info strong {
-            display: block;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .reviews-widget .review-text {
+            color: var(--text-light) !important;
+            line-height: 1.7 !important;
         }
 
-        .client-info span {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .reviews-widget .review-author {
+            color: var(--primary) !important;
+            font-weight: 600 !important;
         }
 
         /* Barbers Section */
@@ -691,8 +675,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .testimonials-grid {
-                grid-template-columns: 1fr;
+            .reviews-widget {
+                padding: 2rem;
             }
 
             .barbers-grid {
@@ -796,39 +780,37 @@
         <div class="container">
             <div class="section-header fade-in">
                 <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-subtitle">Real Reviews</p>
+                <p class="section-subtitle">Real Yelp Reviews</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="stars">
-                        <span>★★★★★</span>
-                    </div>
-                    <p>"Exceptional service and attention to detail. The atmosphere is professional yet welcoming. Best haircut I've had in years!"</p>
-                    <div class="client-info">
-                        <strong>Michael R.</strong>
-                        <span>Regular Client</span>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <div class="stars">
-                        <span>★★★★★</span>
-                    </div>
-                    <p>"The barbers here are true artists. They listen to what you want and deliver perfection every time. Highly recommend!"</p>
-                    <div class="client-info">
-                        <strong>James T.</strong>
-                        <span>Yelp Review</span>
+            <div class="reviews-widget fade-in">
+                <div id="reviewsonmywebsite-widget" 
+                     data-business-url="https://www.yelp.com/biz/brothers-creed-belleville" 
+                     data-widget-style="modern" 
+                     data-theme="light" 
+                     data-max-reviews="6" 
+                     data-show-photos="true" 
+                     data-show-rating="true" 
+                     data-show-date="true"
+                     data-layout="grid">
+                    <!-- Fallback content while widget loads -->
+                    <div class="loading-reviews">
+                        <p style="text-align: center; color: var(--text-light); padding: 2rem;">Loading authentic Yelp reviews...</p>
                     </div>
                 </div>
-                <div class="testimonial-card fade-in">
-                    <div class="stars">
-                        <span>★★★★★</span>
-                    </div>
-                    <p>"Clean, professional, and skilled barbers. The hot towel treatment is amazing. This place sets the standard for barbershops."</p>
-                    <div class="client-info">
-                        <strong>David L.</strong>
-                        <span>Google Review</span>
-                    </div>
+                <script async src="https://reviewsonmywebsite.com/widget.js"></script>
+                
+                <!-- Direct link to Yelp -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://www.yelp.com/biz/brothers-creed-belleville" target="_blank" 
+                       style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--secondary); text-decoration: none; font-weight: 600; transition: all 0.3s ease;"
+                       onmouseover="this.style.transform='translateY(-2px)'" 
+                       onmouseout="this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308c.735-1.089 2.528-.616 2.528.903v3.602zm-9.828 6.028l-1.433-4.995c-.276-.96.8-1.74 1.63-1.176l4.308 2.905c1.089.735.616 2.528-.903 2.528h-3.602zm5.274-13.547l-4.308 2.905c-.83.564-1.906-.216-1.63-1.176l1.433-4.995c.396-1.38 2.35-1.38 2.746 0l1.759 3.266zm-7.898 9.779l-2.905 4.308c-.735 1.089-2.528.616-2.528-.903v-3.602l4.995-1.433c.96-.276 1.74.8 1.176 1.63l-.738 1.1zm-1.439-4.908l-4.995-1.433c-1.38-.396-1.38-2.35 0-2.746l3.602-1.033 1.393 5.212z"/>
+                        </svg>
+                        View All Reviews on Yelp
+                    </a>
                 </div>
             </div>
         </div>
