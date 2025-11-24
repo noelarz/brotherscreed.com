@@ -111,7 +111,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3840&q=100');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -362,6 +362,7 @@
         .barber-image {
             height: 300px;
             overflow: hidden;
+            position: relative;
         }
 
         .barber-image img {
@@ -369,10 +370,30 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+            filter: sepia(20%) saturate(1.2) brightness(0.8);
+        }
+
+        .tool-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 3px solid var(--secondary);
+            transition: all 0.3s ease;
         }
 
         .barber-card:hover .barber-image img {
             transform: scale(1.05);
+            filter: sepia(30%) saturate(1.4) brightness(0.9);
+        }
+
+        .barber-card:hover .tool-overlay {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 10px 30px rgba(205, 127, 50, 0.5);
         }
 
         .barber-info {
@@ -417,7 +438,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
 
@@ -440,6 +461,38 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+        }
+
+        /* 4K Display Enhancements */
+        @media (min-width: 2560px) {
+            .hero h1 {
+                font-size: 7rem;
+            }
+            
+            .section-title {
+                font-size: 4.5rem;
+            }
+            
+            .container {
+                max-width: 1800px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            }
+            
+            .barber-image {
+                height: 400px;
+            }
+            
+            .tool-overlay {
+                padding: 3rem;
+            }
+            
+            .tool-overlay svg {
+                width: 150px;
+                height: 150px;
+            }
         }
 
         .gallery-item:hover img {
@@ -478,7 +531,7 @@
         /* Services Section */
         .services {
             padding: 10rem 5%;
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3840&q=100');
             background-size: cover;
             background-position: center bottom;
             background-attachment: fixed;
@@ -827,10 +880,15 @@
             <div class="barbers-grid">
                 <div class="barber-card fade-in">
                     <div class="barber-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Master Barber">
+                        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3840&q=100" alt="Golden Scissors">
+                        <div class="tool-overlay">
+                            <svg width="120" height="120" fill="#CD7F32" viewBox="0 0 24 24">
+                                <path d="M9.64,7.64C9.87,7.14 10.66,6.88 11.16,7.11L13.34,8.16C14.22,8.54 14.86,9.42 14.9,10.4L14.96,13.29L9.64,7.64M21.7,2.29C21.31,1.9 20.68,1.9 20.29,2.29L18.65,3.93L20.07,5.35L21.7,3.71C22.1,3.32 22.1,2.69 21.7,2.29M16.24,5.35L18.18,7.29L8.15,17.32C7.8,17.67 7.33,17.86 6.83,17.86H4V15.03C4,14.53 4.19,14.06 4.54,13.71L14.82,3.43L16.24,5.35M2,20H22V22H2V20Z"/>
+                            </svg>
+                        </div>
                     </div>
                     <div class="barber-info">
-                        <h3>Marcus Johnson</h3>
+                        <h3>CJ Calilli</h3>
                         <p class="barber-title">Master Barber & Owner</p>
                         <p class="barber-experience">15+ Years Experience</p>
                         <p>Specializes in classic cuts, beard sculpting, and traditional hot towel shaves. Trained in traditional barbering techniques with a modern twist.</p>
@@ -838,10 +896,15 @@
                 </div>
                 <div class="barber-card fade-in">
                     <div class="barber-image">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Senior Barber">
+                        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3840&q=100" alt="Golden Shaver">
+                        <div class="tool-overlay">
+                            <svg width="120" height="120" fill="#CD7F32" viewBox="0 0 24 24">
+                                <path d="M7,3A4,4 0 0,0 3,7V17A4,4 0 0,0 7,21H17A4,4 0 0,0 21,17V7A4,4 0 0,0 17,3H7M7,5H17A2,2 0 0,1 19,7V17A2,2 0 0,1 17,19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5M8,7V9H16V7H8M8,11V13H16V11H8M8,15V17H16V15H8Z"/>
+                            </svg>
+                        </div>
                     </div>
                     <div class="barber-info">
-                        <h3>Anthony Rivera</h3>
+                        <h3>Carlo Bituin</h3>
                         <p class="barber-title">Senior Barber</p>
                         <p class="barber-experience">12+ Years Experience</p>
                         <p>Expert in modern fades, precision cuts, and styling. Known for his attention to detail and ability to create the perfect look for each client.</p>
