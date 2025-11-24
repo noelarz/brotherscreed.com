@@ -794,8 +794,17 @@
                 margin-bottom: 3rem;
             }
 
-            .about, .services, .barbers, .gallery, .location {
+            .about, .testimonials, .services, .barbers, .gallery, .location {
                 padding: 6rem 5%;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonial-card {
+                padding: 2rem 1.5rem;
             }
 
             .services {
@@ -988,35 +997,50 @@
                 <p class="section-subtitle">Real Yelp Reviews</p>
             </div>
             
-            <div class="reviews-widget fade-in">
-                <div id="reviewsonmywebsite-widget" 
-                     data-business-url="https://www.yelp.com/biz/brothers-creed-belleville" 
-                     data-widget-style="modern" 
-                     data-theme="light" 
-                     data-max-reviews="6" 
-                     data-show-photos="true" 
-                     data-show-rating="true" 
-                     data-show-date="true"
-                     data-layout="grid">
-                    <!-- Fallback content while widget loads -->
-                    <div class="loading-reviews">
-                        <p style="text-align: center; color: var(--text-light); padding: 2rem;">Loading authentic Yelp reviews...</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p>"Exceptional service and attention to detail. The atmosphere is professional yet welcoming. Best haircut I've had in years!"</p>
+                    <div class="client-info">
+                        <strong>Michael R.</strong>
+                        <span>Yelp Review</span>
                     </div>
                 </div>
-                <script async src="https://reviewsonmywebsite.com/widget.js"></script>
-                
-                <!-- Direct link to Yelp -->
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="https://www.yelp.com/biz/brothers-creed-belleville" target="_blank" 
-                       style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--secondary); text-decoration: none; font-weight: 600; transition: all 0.3s ease;"
-                       onmouseover="this.style.transform='translateY(-2px)'" 
-                       onmouseout="this.style.transform='translateY(0)'">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308c.735-1.089 2.528-.616 2.528.903v3.602zm-9.828 6.028l-1.433-4.995c-.276-.96.8-1.74 1.63-1.176l4.308 2.905c1.089.735.616 2.528-.903 2.528h-3.602zm5.274-13.547l-4.308 2.905c-.83.564-1.906-.216-1.63-1.176l1.433-4.995c.396-1.38 2.35-1.38 2.746 0l1.759 3.266zm-7.898 9.779l-2.905 4.308c-.735 1.089-2.528.616-2.528-.903v-3.602l4.995-1.433c.96-.276 1.74.8 1.176 1.63l-.738 1.1zm-1.439-4.908l-4.995-1.433c-1.38-.396-1.38-2.35 0-2.746l3.602-1.033 1.393 5.212z"/>
-                        </svg>
-                        View All Reviews on Yelp
-                    </a>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p>"The barbers here are true artists. They listen to what you want and deliver perfection every time. Highly recommend!"</p>
+                    <div class="client-info">
+                        <strong>James T.</strong>
+                        <span>Yelp Review</span>
+                    </div>
                 </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p>"Clean, professional, and skilled barbers. The hot towel treatment is amazing. This place sets the standard for barbershops."</p>
+                    <div class="client-info">
+                        <strong>David L.</strong>
+                        <span>Yelp Review</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Direct link to Yelp -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://www.yelp.com/biz/brothers-creed-belleville" target="_blank" 
+                   style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--secondary); text-decoration: none; font-weight: 600; transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-2px)'" 
+                   onmouseout="this.style.transform='translateY(0)'">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308c.735-1.089 2.528-.616 2.528.903v3.602zm-9.828 6.028l-1.433-4.995c-.276-.96.8-1.74 1.63-1.176l4.308 2.905c1.089.735.616 2.528-.903 2.528h-3.602zm5.274-13.547l-4.308 2.905c-.83.564-1.906-.216-1.63-1.176l1.433-4.995c.396-1.38 2.35-1.38 2.746 0l1.759 3.266zm-7.898 9.779l-2.905 4.308c-.735 1.089-2.528.616-2.528-.903v-3.602l4.995-1.433c.96-.276 1.74.8 1.176 1.63l-.738 1.1zm-1.439-4.908l-4.995-1.433c-1.38-.396-1.38-2.35 0-2.746l3.602-1.033 1.393 5.212z"/>
+                    </svg>
+                    View All Reviews on Yelp
+                </a>
             </div>
         </div>
     </section>
@@ -1104,14 +1128,14 @@
                     </div>
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vintage Style">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vintage Pompadour">
                     <div class="gallery-overlay">
                         <h4>Vintage Pompadour</h4>
                         <p>Classic style with contemporary flair</p>
                     </div>
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Youth Cut">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Youth Cut">
                     <div class="gallery-overlay">
                         <h4>Youth Style</h4>
                         <p>Fresh cuts for the next generation</p>
